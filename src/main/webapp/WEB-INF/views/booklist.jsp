@@ -62,10 +62,10 @@
 </head>
 
 <body>
-	<h1>Members</h1>
+	<h1>Book List</h1>
 	<%
 	BoardDAO boardDAO = new BoardDAO();
-	ArrayList<BoardVO> list = boardDAO.getList();
+	List<BoardVO> list = boardDAO.getBoardList();
 	request.setAttribute("list", list);
 	%>
 	

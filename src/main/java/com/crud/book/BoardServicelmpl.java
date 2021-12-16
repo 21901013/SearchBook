@@ -1,0 +1,54 @@
+package com.crud.book;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.crud.book.*;
+import com.crud.book.con.*;
+
+interface BoardService{
+	public int insertBoard(BoardVO vo);
+	public int deleteBoard(int id);
+	public int updateBoard(BoardVO vo);
+	public BoardVO getBoard(int seq);
+	public List<BoardVO> getBoardList(BoardVO vo);
+}
+
+@Service
+public class BoardServicelmpl implements BoardService{
+	
+	@Autowired
+	BoardDAO boardDAO;
+	
+	@Override
+	public int insertBoard(BoardVO vo) {
+		return boardDAO.insertBoard(vo);
+	}
+	
+	@Override
+	public BoardVO getBoard(int seq) {
+		return boardDAO.getBoard(seq);
+	}
+	
+	@Override
+	public List<BoardVO> getBoardList() {
+		return boardDAO.getBoardList();
+	}
+
+	@Override
+	public int deleteBoard(int id) {
+		return boardDAO.deleteBoard(id);
+	}
+
+	@Override
+	public int updateBoard(BoardVO vo) {
+		return boardDAO.updateBoard(vo);
+	}
+
+	@Override
+	public List<BoardVO> getBoardList(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
