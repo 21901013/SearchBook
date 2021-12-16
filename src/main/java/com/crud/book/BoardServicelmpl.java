@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.crud.book.*;
 import com.crud.book.con.*;
 
 interface BoardService{
@@ -12,7 +11,7 @@ interface BoardService{
 	public int deleteBoard(int id);
 	public int updateBoard(BoardVO vo);
 	public BoardVO getBoard(int seq);
-	public List<BoardVO> getBoardList(BoardVO vo);
+	public List<BoardVO> getBoardList();
 }
 
 @Service
@@ -44,11 +43,5 @@ public class BoardServicelmpl implements BoardService{
 	@Override
 	public int updateBoard(BoardVO vo) {
 		return boardDAO.updateBoard(vo);
-	}
-
-	@Override
-	public List<BoardVO> getBoardList(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

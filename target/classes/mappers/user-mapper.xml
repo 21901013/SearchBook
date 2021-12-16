@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+	<insert id="insertUser">
+		insert into User (userid, password, email, numPhone) values
+		(#{userid} , #{password} , #{email} , #{numPhone})
+	</insert>
+	
+	<update id="updateUser">
+		update User
+		set uesrid=#{userid}, password=#{password}, email=#{email},
+		numPhone=#{numPhone} where seq=#{id}
+	</update>
+	
+	<delete id="deleteUser">
+		delete from User where seq=#{id}
+	</delete>
+	
+	<select id="getUser" resultType="board">
+		select * from User where seq=#{id}
+	</select>
+
+</mapper>

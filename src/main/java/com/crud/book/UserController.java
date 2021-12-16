@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.crud.book.con.*;
+import com.crud.user.UserVO;
 
 /**
  * Handles requests for the application board.
  */
 @Controller
-public class BoardController {
+public class UserController {
 	
 	@Autowired
 	BoardDAO boardService;
@@ -23,20 +24,15 @@ public class BoardController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/board/booklist", method = RequestMethod.GET)
-	public String boardList(Model model) {
-		model.addAttribute("list", boardService.getBoardList());
-		return "posts";
-	}
 	
-	@RequestMapping(value = "/board/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/addaccount", method = RequestMethod.GET)
 	public String addPost() {
-		return "addpostform";
+		return "addaccount";
 	}
 	
-	@RequestMapping(value = "/board/addok", method = RequestMethod.POST)
-	public String addPostOK(BoardVO vo) {
-		int i = boardService.insertBoard(vo);
+	@RequestMapping(value = "/user/addccount_ok", method = RequestMethod.POST)
+	public String addPostOK(UserVO vo) {
+		int i = UserService.insertBoard(vo);
 		if(i == 0)
 			System.out.println("Failed to add data");
 		else

@@ -1,5 +1,7 @@
 package com.crud.book.con;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,13 +22,13 @@ public class BoardDAO {
 		return result;
 	}
 	
-	public int getBoard(int seq) {
-		int result = sqlSession.update("Board.getBoard", seq);
+	public BoardVO getBoard(int seq) {
+		BoardVO result = sqlSession.selectOne("Board.getBoard", seq);
 		return result;
 	}
 	
-	public int getBoardList(BoardVO vo) {
-		int result = sqlSession.update("Board.getBoardList", vo);
+	public List<BoardVO> getBoardList() {
+		List<BoardVO> result = sqlSession.selectList("Board.getBoardList");
 		return result;
 	}
 	
