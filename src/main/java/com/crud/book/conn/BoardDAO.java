@@ -1,4 +1,4 @@
-package com.crud.book.con;
+package com.crud.book.conn;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.crud.book.con.*;
+import com.crud.book.conn.*;
 
 /**
  * Handles requests for the application board.

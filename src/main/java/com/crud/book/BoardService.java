@@ -2,7 +2,7 @@ package com.crud.book;
 
 import java.util.List;
 
-import com.crud.book.con.BoardVO;
+import com.crud.book.conn.BoardVO;
 
 public interface BoardService {
 	public int insertBoard(BoardVO vo);
