@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="${com.mysql.cj.jdbc.Driver}" />
-				<property name="url" value="${jdbc.url}" />
+				<property name="url" value="${jdbc:mysql://walab.handong.edu:3306/PP2_21901013}" />
 				<property name="username" value="${PP2_21901013}" />
 				<property name="password" value="${Ieb8jahs}" />
 			</dataSource>

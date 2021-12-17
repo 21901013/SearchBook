@@ -7,8 +7,8 @@
 	<bean name="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://https://walab.handong.edu:3306/PP2_21901013" />
-		<property name="username" value="PP2_201901013" />
+		<property name="url" value="jdbc:mysql://walab.handong.edu:3306/PP2_21901013" />
+		<property name="username" value="PP2_21901013" />
 		<property name="password" value="Ieb8jahs" />
 	</bean>
 
