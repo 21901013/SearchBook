@@ -50,47 +50,41 @@
 <script>
 	function delete_ok(id){
 		var a = confirm("Delete for good?");
-		if(a) location.href='delete_ok.jsp?id=' + id;
+		if(a) location.href='deleteok/' + id;
 	}
-	function view(id){
-		location.href ='view.jsp?id='+id;
-	}
-	function editform(id){
-		location.href ='editform.jsp?id='+id;
-	}
+//	function editform(id){
+//		location.href ='editpost/'+id;
+//	}
 </script>
 </head>
 
 <body>
 	<h1>Book List</h1>
-	<%
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> list = boardDAO.getBoardList();
-	request.setAttribute("list", list);
-	%>
 	
 	<table id="list" width="90%">
 		<tr>
 			<th>No</th>
-			<th>User Id</th>
-			<th>User Name</th>
-			<th>Email</th>
-			<th>Registered Date</th>
-			<th>Add</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Content</th>
+			<th>Location</th>
+			<th>Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 		<c:forEach items="${list}" var="u">
 			<tr>
-				<td>${u.getSid()}</td>
-				<td>${u.getUserid()}</td>
-				<td>${u.getUsername()}</td>
-				<td>${u.getEmail()}</td>
-				<td>${u.getRegdate()}</td>
-				<td><input type="button" id="b1" value="View" onclick="javascript:view(${u.getSid()})">
-				<input type="button" id="b2" value="Edit" onclick="javascript:editform(${u.getSid()})">
-				<input type="button" id="b3" value="Delete" onclick="javascript:delete_ok('${u.getSid()}')"></td>
+				<td>${u.getId()}</td>
+				<td>${u.getTitle()}</td>
+				<td>${u.getAuthor()}</td>
+				<td>${u.getContent()}</td>
+				<td>${u.getLocation()}</td>
+				<td>${u.getDate()}</td>
+				<td><a href="editform/${u.getId()}">Edit</a></td>
+				<td><a href="javascript:delete_ok('${u.getId()}')">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<br/><a href="addform.jsp">Add New Post</a>
+	<br/><a href="addform.jsp">Add New Book</a>
 </body>
 </html>

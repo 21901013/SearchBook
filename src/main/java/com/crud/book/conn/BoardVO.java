@@ -11,9 +11,7 @@ public class BoardVO {
 	private String author;
 	private String location;
 	private Date date;
-	private int status;
-	private int total;
-	private int lend;
+	private String content;
 	
 	
 	public int getId() {
@@ -46,23 +44,12 @@ public class BoardVO {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public int getStatus() {
-		return status;
+	public String getContent() {
+		return content;
 	}
-	public void setStatus(int status) {
-		this.status = status;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
-	public int getLend() {
-		return lend;
-	}
-	public void setLend(int lend) {
-		this.lend = lend;
-	}
+	
 	
 }
