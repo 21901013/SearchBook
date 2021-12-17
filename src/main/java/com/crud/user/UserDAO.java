@@ -11,7 +11,7 @@ public class UserDAO {
 	SqlSession sqlSession;
 	
 	public int insertUser(UserVO vo) {
-		int result = sqlSession.update("User.insertUser", vo);
+		int result = sqlSession.insert("User.insertUser", vo);
 		return result;
 	}
 	

@@ -2,6 +2,9 @@ package com.crud.book.conn;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BoardVO {
 	private int id;
 	private String title;

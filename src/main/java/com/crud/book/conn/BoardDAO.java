@@ -13,7 +13,7 @@ public class BoardDAO {
 	SqlSession sqlSession;
 	
 	public int insertBoard(BoardVO vo) {
-		int result = sqlSession.update("Board.insertBoard", vo);
+		int result = sqlSession.insert("Board.insertBoard", vo);
 		return result;
 	}
 	

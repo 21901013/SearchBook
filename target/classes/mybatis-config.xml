@@ -6,23 +6,5 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="board" type="com.crud.book.conn.BoardVO" />
 		<typeAlias alias="user" type="com.crud.user.UserVO" />
 	</typeAliases>
-	
-	<!-- DataSource 설정 -->
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="${com.mysql.cj.jdbc.Driver}" />
-				<property name="url" value="${jdbc:mysql://walab.handong.edu:3306/PP2_21901013}" />
-				<property name="username" value="${PP2_21901013}" />
-				<property name="password" value="${Ieb8jahs}" />
-			</dataSource>
-		</environment>
-	</environments>
-	
-	<!-- SQL Mapper 설정 -->
-	<mappers>
-		<mapper resource="mappers/board-mapping.xml" />
-		<mapper resource="mappers/user-mapping.xml" />
-	</mappers>
+
 </configuration>
