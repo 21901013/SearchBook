@@ -37,17 +37,17 @@ public class UserController {
 			System.out.println("Failed to add data");
 		else
 			System.out.println("Successfully added data!");
-		return "redirect:list";
+		return "";
 	}
 	
-	@RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		UserVO boardVO = userService.getUser(id);
 		model.addAttribute("boardVO", boardVO);
 		return "editform";
 	}
 	
-	@RequestMapping(value = "/editok", method = RequestMethod.POST)
+	@RequestMapping(value = "/edit_ok", method = RequestMethod.POST)
 	public String editPostOK(UserVO vo) {
 		int i = userService.updateUser(vo);
 		if(i == 0)

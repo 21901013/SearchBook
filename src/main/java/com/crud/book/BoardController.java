@@ -27,48 +27,7 @@ public class BoardController {
 	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
 	public String boardList(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
-		return "booklist";
+		return "/board/booklist";
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addPost() {
-		return "addpostform";
-	}
-	
-	@RequestMapping(value = "/board/addok", method = RequestMethod.POST)
-	public String addPostOK(BoardVO vo) {
-		int i = boardService.insertBoard(vo);
-		if(i == 0)
-			System.out.println("Failed to add data");
-		else
-			System.out.println("Successfully added data!");
-		return "redirect:list";
-	}
-	
-	@RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
-	public String editPost(@PathVariable("id") int id, Model model) {
-		BoardVO boardVO = boardService.getBoard(id);
-		model.addAttribute("boardVO", boardVO);
-		return "editform";
-	}
-	
-	@RequestMapping(value = "/editok", method = RequestMethod.POST)
-	public String editPostOK(BoardVO vo) {
-		int i = boardService.updateBoard(vo);
-		if(i == 0)
-			System.out.println("Failed to add data");
-		else
-			System.out.println("Successfully added data!");
-		return "redirect:list";
-	}
-	
-	@RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-	public String deltePost(@PathVariable("id") int id) {
-		int i = boardService.deleteBoard(id);
-		if(i == 0)
-			System.out.println("Failed to add data");
-		else
-			System.out.println("Successfully added data!");
-		return "redirect:../list";
-	}
 }
