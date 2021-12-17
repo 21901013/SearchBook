@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.crud.book.con.BoardDAO"%>
+<%@page import="com.crud.book.conn.BoardDAO"%>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<jsp:useBean id="u" class="com.crud.book.con.BoardVO" />
+<jsp:useBean id="u" class="com.crud.book.conn.BoardVO" />
 <jsp:setProperty property="*" name="u"/>
 
 <%

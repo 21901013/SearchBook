@@ -9,15 +9,15 @@
 	<update id="updateBoard">
 		update Book
 		set title=#{title}, author=#{author}, date=#{date},
-		location=#{location} where seq=#{id}
+		location=#{location} where seq=#{seq}
 	</update>
 	
 	<delete id="deleteBoard">
-		delete from Book where seq=#{id}
+		delete from Book where seq=#{seq}
 	</delete>
 	
 	<select id="getBoard" resultType="board">
-		select * from Book where seq=#{id}
+		select * from Book where seq=#{seq}
 	</select>
 	
 	<select id="getBoardList" resultType="board">
