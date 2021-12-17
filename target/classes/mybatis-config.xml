@@ -3,7 +3,25 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="board"
-			type="com.crud.book.con.BoardVO" />
+		<typeAlias alias="board" type="com.crud.book.con.BoardVO" />
+		<typeAlias alias="user" type="com.crud.user.UserVO"/>
 	</typeAliases>
+	<!-- DataSource 설정 -->
+	<environments default="developement">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${}" />
+				<property name="url" value="{}" />
+				<property name="username" value="${}" />
+				<property name="password" value="${}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- SQL Mapper 설정 -->
+	<mappers>
+		<mapper resource="mappers/board-mapping.xml" />
+		<mapper resource="mappers/user-mapping.xml" />
+	</mappers>
+	
 </configuration>

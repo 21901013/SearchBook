@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.crud.book.con.*;
-import com.crud.user.UserVO;
+import com.crud.user.*;
 
 /**
  * Handles requests for the application board.
  */
 @Controller
+@RequestMapping(value="/user")
 public class UserController {
 	
 	@Autowired
-	BoardDAO boardService;
+	UserDAO userService;
 	
 //	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
@@ -25,14 +25,14 @@ public class UserController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
-	@RequestMapping(value = "/user/addaccount", method = RequestMethod.GET)
+	@RequestMapping(value = "/addaccount", method = RequestMethod.GET)
 	public String addPost() {
 		return "addaccount";
 	}
 	
-	@RequestMapping(value = "/user/addccount_ok", method = RequestMethod.POST)
+	@RequestMapping(value = "/addccount_ok", method = RequestMethod.POST)
 	public String addPostOK(UserVO vo) {
-		int i = UserService.insertBoard(vo);
+		int i = userService.insertUser(vo);
 		if(i == 0)
 			System.out.println("Failed to add data");
 		else
@@ -42,28 +42,18 @@ public class UserController {
 	
 	@RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
-		BoardVO boardVO = boardService.getBoard(id);
+		UserVO boardVO = userService.getUser(id);
 		model.addAttribute("boardVO", boardVO);
 		return "editform";
 	}
 	
 	@RequestMapping(value = "/editok", method = RequestMethod.POST)
-	public String editPostOK(BoardVO vo) {
-		int i = boardService.updateBoard(vo);
+	public String editPostOK(UserVO vo) {
+		int i = userService.updateUser(vo);
 		if(i == 0)
 			System.out.println("Failed to add data");
 		else
 			System.out.println("Successfully added data!");
 		return "redirect:list";
-	}
-	
-	@RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-	public String deltePost(@PathVariable("id") int id) {
-		int i = boardService.deleteBoard(id);
-		if(i == 0)
-			System.out.println("Failed to add data");
-		else
-			System.out.println("Successfully added data!");
-		return "redirect:../list";
 	}
 }

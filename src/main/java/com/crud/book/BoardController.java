@@ -13,6 +13,7 @@ import com.crud.book.con.*;
  * Handles requests for the application board.
  */
 @Controller
+@RequestMapping(value="/board")
 public class BoardController {
 	
 	@Autowired
@@ -23,13 +24,13 @@ public class BoardController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/board/booklist", method = RequestMethod.GET)
+	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
 	public String boardList(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
-		return "posts";
+		return "booklist";
 	}
 	
-	@RequestMapping(value = "/board/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addPost() {
 		return "addpostform";
 	}

@@ -16,7 +16,7 @@
 		delete from User where seq=#{id}
 	</delete>
 	
-	<select id="getUser" resultType="board">
+	<select id="getUser" resultType="user">
 		select * from User where seq=#{id}
 	</select>
 
