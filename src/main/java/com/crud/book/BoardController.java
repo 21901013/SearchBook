@@ -24,10 +24,10 @@ public class BoardController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String boardList(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
-		return "/board/booklist";
+		return "/board/list";
 	}
 	
 }

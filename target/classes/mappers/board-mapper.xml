@@ -10,7 +10,7 @@
 	<update id="updateBoard">
 		update Book
 		set title=#{title}, author=#{author}, date=#{date}, location=#{location}
-		where seq=#{seq}
+		where id=#{id}
 	</update>
 	
 	<delete id="deleteBoard">
