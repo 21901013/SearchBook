@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
+//JdbcTemplate jdbcTemplate;
 public class UserDAO {
 	
 	@Autowired
