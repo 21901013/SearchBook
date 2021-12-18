@@ -12,19 +12,9 @@ public class UserServicelmpl implements UserService{
 	
 	@Autowired
 	UserDAO userDAO;
-	
-	@Override
-	public int insertUser(UserVO vo) {
-		return userDAO.insertUser(vo);
-	}
-	
-	@Override
-	public UserVO getUser(int seq) {
-		return userDAO.getUser(seq);
-	}
 
 	@Override
-	public int updateUser(UserVO vo) {
-		return userDAO.updateUser(vo);
+	public UserVO getUser(UserVO vo) {
+		return userDAO.getUser(vo);
 	}
 }
