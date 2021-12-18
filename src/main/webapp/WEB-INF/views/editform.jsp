@@ -55,7 +55,7 @@
 
 	<div id="head">
 		<h1>Book</h1>
-		<h3>Add a book</h3>
+		<h3>Edit book info</h3>
 	</div>
 
 
