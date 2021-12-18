@@ -8,16 +8,16 @@
 	
 	<update id="updateUser">
 		update User
-		set uesrid=#{userid}, password=#{password}, email=#{email},
-		numPhone=#{numPhone} where seq=#{id}
+		set uesrid=#{userid}, password=#{password},
+		numPhone=#{numPhone} where id=#{id}
 	</update>
 	
 	<delete id="deleteUser">
-		delete from User where seq=#{id}
+		delete from User where id=#{id}
 	</delete>
 	
 	<select id="getUser" resultType="user">
-		select * from User where seq=#{id}
+		select * from User where id=#{id}
 	</select>
 
 </mapper>
