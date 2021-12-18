@@ -5,11 +5,17 @@
 <head>
 <style>
 #b1 {
-	background-color: magenta;
-	color: white;
+	border-radius: 7px;
+	padding: 5px;
+	float: right;
+	align-content: right;
+	background-color: mistyRose;
+	color: black;
 }
 #b2 {
-	background-color: blue;
+	border-radius: 7px;
+	padding: 5px;
+	background-color: black;
 	color: white;
 }
 #edit {
@@ -29,11 +35,18 @@
   background-color: #006bb3;
   color: white;
 }
+#head {
+	background-color: indianRed;
+	color: white;
+	padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
 </style>
 </head>
 
 <body>
-	<div>
+	<div id="head">
 		<h1>Book</h1>
 		<h3>Add a book</h3>
 	</div>
@@ -49,8 +62,8 @@
 		<tr><td>Price:</td><td><input type="number" name="price" /></td></tr>
 	</table>
 	<br><br>
+	<input type="button" id="b2" onclick="history.back()" value="Back to the list">
 	<input type="submit" id="b1" value="Submit"/>
-	<input type="button" id="b2" onclick="location.href='list'" value="Back to the list">
 
 		</form>
 	</div>

@@ -24,27 +24,25 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: slateblue;
+  background-color: LightPink;
   color: white;
 }
+#head{
+	background-color: PaleVioletRed;
+	color: white;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
 #b1{
-	border: 5px;
-	padding: 7px;
-	background-color: gold;
+	border-radius: 7px;
+	padding: 5px;
+	float: right;
+	align-content: right;
+	background-color: mistyRose;
 	color: black;
 }
-#b2{
-	border: 3px;
-	padding: 7px;
-	background-color: dodgerblue;
-	color: white;
-}
-#b3{
-	border: 3px;
-	padding: 7px;
-	background-color: red;
-	color: white;
-}
+
 </style>
 
 <script>
@@ -60,7 +58,7 @@
 </head>
 
 <body>
-	<h1>Book List</h1>
+	<h1 id="head">Book List</h1>
 	
 	<table id="list" width="90%">
 		<tr>
@@ -88,6 +86,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<br/><button type="button" onclick="location.href='add'">Add New Book</button>
+	<br/><button id="b1" type="button" onclick="location.href='add'">Add New Book</button>
 </body>
 </html>

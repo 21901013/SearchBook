@@ -18,7 +18,7 @@
 #edit td, #edit th {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align:center;
+  text-align:left;
 }
 #edit th {
   padding-top: 12px;
@@ -27,12 +27,25 @@
   background-color: #006bb3;
   color: white;
 }
+#head{
+	background-color: indianRed;
+	color: white;
+	padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
 #b1 {
-	background-color: skyblue;
+	border-radius: 7px;
+	padding: 5px;
+	float: right;
+	align-content: right;
+	background-color: mistyRose;
 	color: black;
 }
 #b2 {
-	background-color: red;
+	border-radius: 7px;
+	padding: 5px;
+	background-color: black;
 	color: white;
 }
 </style>
@@ -40,7 +53,7 @@
 
 <body>
 
-<div>
+	<div id="head">
 		<h1>Book</h1>
 		<h3>Add a book</h3>
 	</div>
@@ -58,8 +71,8 @@
 		<tr><td>Price:</td><td><form:input type="text" path="price" /></td></tr>
 	</table>
 	<br><br>
-	<input type="submit" id="b1" value="Edit"/>
 	<input type="button" id="b2" onclick="history.back()" value="Back to the list">
+	<input type="submit" id="b1" value="Save changes"/>
 </form:form>
 </body>
 </html>
