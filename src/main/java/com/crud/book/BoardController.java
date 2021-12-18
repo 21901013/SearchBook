@@ -39,16 +39,16 @@ public class BoardController {
 	public String addPostOK(BoardVO vo) {
 		int i = boardService.insertBoard(vo);
 		if(i == 0)
-			System.out.println("Failed to add data");
+			System.out.println("Failed to add data.");
 		else
 			System.out.println("Successfully added data!");
 		return "redirect:list";
 	}
 	
-	@RequestMapping(value = "/editpost/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		BoardVO boardVO = boardService.getBoard(id);
-		model.addAttribute("boardVO", boardVO);
+		model.addAttribute("u", boardVO);
 		return "editform";
 	}
 	
@@ -56,7 +56,7 @@ public class BoardController {
 	public String editPostOK(BoardVO vo) {
 		int i = boardService.updateBoard(vo);
 		if(i == 0)
-			System.out.println("Failed to add data");
+			System.out.println("Failed to add data.");
 		else
 			System.out.println("Successfully added data!");
 		return "redirect:list";

@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 	<insert id="insertBoard">
-		insert into Book (title, author, date, location)
+		insert into Book (title, author, date, location, content, price)
 		values
-		(#{title} , #{author} , #{date} , #{location})
+		(#{title} , #{author} , #{date}, #{location}, #{content}, #{price})
 	</insert>
 	
 	<update id="updateBoard">
 		update Book
-		set title=#{title}, author=#{author}, date=#{date}, location=#{location}
+		set title=#{title}, author=#{author}, date=#{date}, location=#{location}, content=#{content}, price=#{price} 
 		where id=#{id}
 	</update>
 	

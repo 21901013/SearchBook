@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.crud.*,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
@@ -26,29 +27,39 @@
   background-color: #006bb3;
   color: white;
 }
+#b1 {
+	background-color: skyblue;
+	color: black;
+}
+#b2 {
+	background-color: red;
+	color: white;
+}
 </style>
 </head>
 
 <body>
 
-//<%
-//	BoardDAO boardDAO = new BoardDAO();
-//	String id = request.getParameter("id");
-//	BoardVO u = boardDAO.getOne(Integer.parseInt(id));
-//%>
+<div>
+		<h1>Book</h1>
+		<h3>Add a book</h3>
+	</div>
 
-<form:form commandName="boardVO" action="../editok" method="POST">
+
+<form:form commandName="u" action="../editok" method="POST">
 	<form:hidden path="id"/>
 	
 	<table id="edit">
-		<tr><td>Title:</td><td><input type="text" path="title"/></td></tr>
-		<tr><td>Author:</td><td><input type="text" path="author"/></td></tr>
-		<tr><td>Location:</td><td><input type="text" path="location"/></td></tr>
-		<tr><td>Date:</td><td><input type="text" path="date" /></td></tr>
-		<tr><td>Content:</td><td><textarea cols="50" rows="5" path="content"></textarea></td></tr>
+		<tr><td>Title:</td><td><form:input type="text" path="title"/></td></tr>
+		<tr><td>Author:</td><td><form:input type="text" path="author"/></td></tr>
+		<tr><td>Location:</td><td><form:input type="text" path="location"/></td></tr>
+		<tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content" /></td></tr>
+		<tr><td>Publish Date:</td><td><form:input type="text" path="date"/></td></tr>
+		<tr><td>Price:</td><td><form:input type="text" path="price" /></td></tr>
 	</table>
-	<input type="submit" value="Edit"/>
-	<input type="button" onclick="history.back()" value="Back to the list">
+	<br><br>
+	<input type="submit" id="b1" value="Edit"/>
+	<input type="button" id="b2" onclick="history.back()" value="Back to the list">
 </form:form>
 </body>
 </html>

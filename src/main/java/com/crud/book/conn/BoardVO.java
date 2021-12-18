@@ -1,6 +1,7 @@
 package com.crud.book.conn;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -10,10 +11,17 @@ public class BoardVO {
 	private String title;
 	private String author;
 	private String location;
-	private Date date;
+	private String date;
 	private String content;
+	private int price;
 	
 	
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public int getId() {
 		return id;
 	}
@@ -38,10 +46,10 @@ public class BoardVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getContent() {

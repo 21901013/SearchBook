@@ -52,9 +52,10 @@
 		var a = confirm("Delete for good?");
 		if(a) location.href='deleteok/' + id;
 	}
-//	function editform(id){
-//		location.href ='editpost/'+id;
-//	}
+	
+	function editform(id){
+		location.href ='editform/'+id;
+	}
 </script>
 </head>
 
@@ -68,7 +69,8 @@
 			<th>Author</th>
 			<th>Content</th>
 			<th>Location</th>
-			<th>Date</th>
+			<th>Updated Date</th>
+			<th>Price</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -80,11 +82,12 @@
 				<td>${u.getContent()}</td>
 				<td>${u.getLocation()}</td>
 				<td>${u.getDate()}</td>
+				<td>${u.getPrice()}</td>
 				<td><a href="editform/${u.getId()}">Edit</a></td>
 				<td><a href="javascript:delete_ok('${u.getId()}')">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<br/><a href="addform.jsp">Add New Book</a>
+	<br/><button type="button" onclick="location.href='add'">Add New Book</button>
 </body>
 </html>

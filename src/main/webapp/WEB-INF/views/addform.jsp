@@ -20,7 +20,7 @@
 #edit td, #edit th {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align:center;
+  text-align:left;
 }
 #edit th {
   padding-top: 12px;
@@ -39,33 +39,18 @@
 	</div>
 
 	<div id="middle">
-		<form action="add_ok.jsp" method="post">
-
-			<table>
-				<tr>
-					<td>Title:</td>
-					<td><input type="text" name="title" /></td>
-				</tr>
-				<tr>
-					<td>Author:</td>
-					<td><input type="text" name="author" /></td>
-				</tr>
-				<tr>
-					<td>Location:</td>
-					<td><input type="text" name="location" /></td>
-				</tr>
-				<tr>
-					<td>Date:</td>
-					<td><input type="date" name="date" /></td>
-				<tr>
-					<td>Content:</td>
-					<td><input type="text" name="content" /></td>
-				</tr>
-				<tr>
-					<td><input type="button" id="b1" value="Cancel" onclick="location.href=list"/></td>
-					<td><input type="submit" id="b2" value="Submit" /></td>
-				</tr>
-			</table>
+		<form action="addok" method="POST">
+	<table id="edit">
+		<tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
+		<tr><td>Author:</td><td><input type="text" name="author"/></td></tr>
+		<tr><td>Location:</td><td><input type="text" name="location"/></td></tr>
+		<tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
+		<tr><td>Publish Date:</td><td><input type="text" name="date"/></td></tr>
+		<tr><td>Price:</td><td><input type="number" name="price" /></td></tr>
+	</table>
+	<br><br>
+	<input type="submit" id="b1" value="Submit"/>
+	<input type="button" id="b2" onclick="location.href='list'" value="Back to the list">
 
 		</form>
 	</div>
